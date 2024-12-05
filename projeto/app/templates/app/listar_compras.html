@@ -1,0 +1,21 @@
+{% extends 'app/base.html' %}
+
+{% block main %}
+<div class="container mt-4">
+    <h2>Minhas Compras</h2>
+    {% if compras %}
+        <ul class="list-group">
+            {% for compra in compras %}
+                <li class="list-group-item">
+                    <strong>Curso:</strong> {{ compra.curso.nome }}<br>
+                    <strong>Quantidade:</strong> {{ compra.quantidade }}<br>
+                    <strong>Valor Total:</strong> R$ {{ compra.valor_total|floatformat:2 }}<br>
+                    <strong>Data:</strong> {{ compra.data }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="text-muted">Você ainda não comprou nenhum curso.</p>
+    {% endif %}
+</div>
+{% endblock %}

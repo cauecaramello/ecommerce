@@ -1,0 +1,23 @@
+{% extends 'app/base.html' %}
+
+{% block main %}
+<div class="container mt-4">
+    <h2>Contato</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" class="form-control" id="nome" name="nome" required>
+        </div>
+        <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="mensagem">Mensagem:</label>
+            <textarea class="form-control" id="mensagem" name="mensagem" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+{% endblock %}

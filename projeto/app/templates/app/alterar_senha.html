@@ -1,0 +1,23 @@
+{% extends 'app/base.html' %}
+
+{% block main %}
+<div class="container mt-4">
+    <h2>Alterar Senha</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="senha_atual">Senha Atual:</label>
+            <input type="password" class="form-control" id="senha_atual" name="senha_atual" required>
+        </div>
+        <div class="form-group">
+            <label for="nova_senha">Nova Senha:</label>
+            <input type="password" class="form-control" id="nova_senha" name="nova_senha" required>
+        </div>
+        <div class="form-group">
+            <label for="confirmacao_senha">Confirmação da Nova Senha:</label>
+            <input type="password" class="form-control" id="confirmacao_senha" name="confirmacao_senha" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Alterar Senha</button>
+    </form>
+</div>
+{% endblock %}

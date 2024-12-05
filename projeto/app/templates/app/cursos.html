@@ -1,0 +1,24 @@
+{% extends 'app/base.html' %}
+
+{% block main %}
+<div class="container mt-4">
+    <h2>Lista de Cursos</h2>
+    <div class="row">
+        {% for curso in cursos %}
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{{ curso.foto.url }}" class="card-img-top" alt="Foto do Curso">
+                <div class="card-body">
+                    <h5 class="card-title">{{ curso.nome }}</h5>
+                    <p class="card-text">Autor: {{ curso.autor }}</p>
+                    <p class="card-text">Preço: R$ {{ curso.preco }}</p>
+                    <p class="card-text">Duração: {{ curso.duracao }} Horas</p>
+                    <p class="card-text">Estoque: {{ curso.quantidade_estoque }}</p>
+                    <a href="{% url 'comprar_curso' curso.id %}" class="btn btn-primary">Comprar Curso</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

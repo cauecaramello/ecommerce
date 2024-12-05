@@ -1,0 +1,12 @@
+{% extends 'app/base.html' %}
+
+{% block main %}
+<div class="container mt-4">
+    <h2>Adicionar Foto de Perfil</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Salvar Foto</button>
+    </form>
+</div>
+{% endblock %}

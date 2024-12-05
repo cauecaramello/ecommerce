@@ -1,0 +1,35 @@
+{% extends 'app/base.html' %}
+
+{% block main %}
+<div class="container mt-4">
+    <h2>Criar Novo Curso</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="nome">Nome do Curso</label>
+            {{ form.nome }}
+        </div>
+        <div class="form-group">
+            <label for="autor">Autor</label>
+            {{ form.autor }}
+        </div>
+        <div class="form-group">
+            <label for="duracao">Duração</label>
+            {{ form.duracao }}
+        </div>
+        <div class="form-group">
+            <label for="preco">Preço</label>
+            {{ form.preco }}
+        </div>
+        <div class="form-group">
+            <label for="foto">Foto</label>
+            {{ form.foto }}
+        </div>
+        <div class="form-group">
+            <label for="quantidade_estoque">Quantidade em Estoque</label>
+            {{ form.quantidade_estoque }}
+        </div>
+        <button type="submit" class="btn btn-success">Criar Curso</button>
+    </form>
+</div>
+{% endblock %}

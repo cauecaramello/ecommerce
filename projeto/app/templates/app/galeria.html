@@ -1,0 +1,43 @@
+{% extends 'app/base.html' %}
+
+{% block main %}
+<div class="container mt-4">
+    <h2>Galeria de Fotos</h2>
+    <div class="row">
+        {% for usuario in usuarios %}
+        <div class="col-md-3">
+            <div class="card">
+                <img 
+                    src="{% if usuario.foto %}{{ usuario.foto.url }}{% else %}{{ STATIC_URL }}img/default-avatar.png{% endif %}" 
+                    alt="Foto de {{ usuario.first_name }}" 
+                    class="card-img-top" />
+                <div class="card-body">
+                    <h5 class="card-title">{{ usuario.first_name }} {{ usuario.last_name }}</h5>
+                    <p class="card-text">Username: {{ usuario.username }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="container mt-4">
+    <h2>Galeria de Cursos</h2>
+    <div class="row">
+        {% for curso in cursos %}
+        <div class="col-md-3">
+            <div class="card">
+                <!-- Verifica se o curso tem foto e exibe a foto, caso contrário, exibe uma imagem padrão -->
+                <img 
+                    src="{% if curso.foto %}{{ curso.foto.url }}{% else %}{{ STATIC_URL }}img/default-avatar.png{% endif %}" 
+                    alt="Foto do Curso" 
+                    class="card-img-top" />
+                <div class="card-body">
+                    <h5 class="card-title">{{ curso.nome }}</h5>
+                    <p class="card-text">{{ curso.duracao }} Horas - R$ {{ curso.preco }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

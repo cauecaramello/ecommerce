@@ -1,0 +1,108 @@
+<!-- app/templates/app/cadastrar_usuario.html -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .form-group input {
+            border-radius: 5px;
+            border: 1px solid #ced4da;
+            padding: 10px;
+            width: 100%;
+        }
+        .form-group input[type="file"] {
+            border: 1px solid #ced4da;
+            padding: 5px;
+        }
+        button {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .messages ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .messages li {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Cadastro de Usuário</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha" required>
+        </div>
+
+        <div class="form-group">
+            <label for="confirmar_senha">Confirmar Senha</label>
+            <input type="password" name="confirmar_senha" id="confirmar_senha" required>
+        </div>
+
+        <div class="form-group">
+            <label for="foto">Foto de Perfil</label>
+            <input type="file" name="foto" id="foto" accept="image/*">
+        </div>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <div class="messages">
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
