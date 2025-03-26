@@ -25,7 +25,7 @@ Protótipo de loja virtual com **back-end em Django** e **front-end dinâmico**.
 |----------------|----------------|----------------|
 | Python 3       | HTML5          | Git            |
 | Django 4.x     | CSS3           | SQLite         |
-| Django ORM     |                | VS Code        |
+| Django ORM     |BootStrap       | VS Code        |
 
 ## 📦 Como Executar
 
