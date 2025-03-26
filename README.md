@@ -13,7 +13,7 @@ Protótipo de loja virtual com **back-end em Django** e **front-end dinâmico**.
   - Endpoints para adicionar/remover itens do carrinho.
 - **Admin Django**: Painel para gerenciar produtos.
 
-### Front-End (HTML/CSS/JS)
+### Front-End (HTML/CSS)
 - **Carrinho dinâmico**:
   - Adicionar/remover itens sem recarregar a página (`fetch` ou AJAX).
   - Cálculo automático do total.
