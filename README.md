@@ -31,5 +31,5 @@ Protótipo de loja virtual com **back-end em Django** e **front-end dinâmico**.
 
 1. **Clone o repositório**:
    ```bash
-   git clone https://github.com/cauecaramello/web.git
+   git clone https://github.com/cauecaramello/ecommerce.git
    cd web
